@@ -26,6 +26,16 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	UPROPERTY(VisibleAnywhere ,Category=Gun)
+	//Components
+	UPROPERTY(EditAnywhere,Category=Gun)
 	class USkeletalMeshComponent* Gun;
+	UPROPERTY(VisibleAnywhere, Category=Gun)
+	class USceneComponent* FirePos;
+	UPROPERTY(EditAnywhere,Category=Gun)
+	class UAnimationAsset* FireAnim;
+	UPROPERTY(EditAnywhere, Category=Gun)
+	class UActorComponent* Bullet;
+
+	//Callback Functions
+	void Fire();
 };
